@@ -4,29 +4,32 @@ body {
   background-color: #e3ebf0;
 }
 
-span {
+h1 {
   font-family: sans-serif;
-  font-weight: bold;
-  font-size: 350%;
+  font-size: 400%;
+}
+
+h1.blah {
+
   background-color: #e3ebf0;
   position: absolute;
   left: 270;
+  text-transform: uppercase;
   min-width: 300;
 }
 
-span#good { top: 70; }
-span#cheap { top: 235; }
-span#fast { top: 395; }
+h1#good { top: 135; }
+h1#cheap { top: 300; }
+h1#fast { top: 460; }
 
 </style>
 
-<div>
-<img src="good_cheap_fast.gif" />
+<h1 id="title">&nbsp;</h1>
+<h1 class="blah" id="good">Good</h1>
+<h1 class="blah" id="cheap">Cheap</h1>
+<h1 class="blah" id="fast">Fast</h1>
 
-<span id="good">Good</span>
-<span id="cheap">Cheap</span>
-<span id="fast">Fast</span>
-</div>
+<img src="good_cheap_fast.gif" />
 
 <script>
 onload = function() {
@@ -35,12 +38,16 @@ onload = function() {
   // We want the list of names after the query
   const params = decodeURI(window.location.href.split("?").pop()).split("&");
 
-  // Only proceed if we have at least three
+  // Proceed if we have at least three parameters
   if (params.length >= 3) {
 
     document.getElementById("good").innerHTML = params[0];
     document.getElementById("cheap").innerHTML = params[1];
     document.getElementById("fast").innerHTML = params[2];
+
+    // Set the title if there's a fourth parameter
+    if (params[3] !== undefined)
+      document.getElementById("title").innerHTML = params[3];
   }
 }
 </script>
