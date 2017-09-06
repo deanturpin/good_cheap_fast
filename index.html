@@ -1,0 +1,41 @@
+<style>
+
+body {
+  background-color: #e3ebf0;
+}
+
+span {
+  font-family: sans-serif;
+  font-size: 300%;
+  background-color: #e3ebf0;
+  position: absolute;
+  left: 270;
+  width: 200;
+}
+
+span#good { top: 70; }
+span#cheap { top: 235; }
+span#fast { top: 400; }
+
+</style>
+
+<div>
+<img src="good_cheap_fast.gif" />
+
+<span id="good">one</span>
+<span id="cheap">two</span>
+<span id="fast">three</span>
+</div>
+
+<script>
+onload = function() {
+
+  // Get the params
+  const params = window.location.href.split("?").pop();
+  const names = params.split("&");
+
+  document.getElementById("good").innerHTML = names[0];
+  document.getElementById("cheap").innerHTML = names[1];
+  document.getElementById("fast").innerHTML = names[2];
+}
+</script>
