@@ -2,5 +2,5 @@ Override defaults by adding an ampersand-separated list after the query with an 
 
 URL?one&two&three?title
 
-* [Default version](https://deanturpin.github.io/good_cheap_fast/)
-* [Happy program managers this month](https://deanturpin.github.io/good_cheap_fast?Tim&Richard&Dave&Happy%20PMs%20in%20September:)
+* [Default](https://deanturpin.github.io/good_cheap_fast/)
+* [Happy program managers this month](https://deanturpin.github.io/good_cheap_fast/?Dave&Richard&Tim&Happy%20PMs%20in%20September)
