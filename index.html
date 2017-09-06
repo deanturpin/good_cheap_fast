@@ -22,20 +22,22 @@ span#fast { top: 400; }
 <div>
 <img src="good_cheap_fast.gif" />
 
-<span id="good">one</span>
-<span id="cheap">two</span>
-<span id="fast">three</span>
+<span id="good">Good</span>
+<span id="cheap">Cheap</span>
+<span id="fast">Fast</span>
 </div>
 
 <script>
 onload = function() {
 
   // Get the params
-  const params = window.location.href.split("?").pop();
-  const names = params.split("&");
+  const params = window.location.href.split("?").pop().split("&");
 
-  document.getElementById("good").innerHTML = names[0];
-  document.getElementById("cheap").innerHTML = names[1];
-  document.getElementById("fast").innerHTML = names[2];
+  if (params.length > 2) {
+
+    document.getElementById("good").innerHTML = params[0];
+    document.getElementById("cheap").innerHTML = params[1];
+    document.getElementById("fast").innerHTML = params[2];
+  }
 }
 </script>
