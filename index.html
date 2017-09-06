@@ -31,7 +31,8 @@ span#fast { top: 400; }
 onload = function() {
 
   // Get the params
-  const params = window.location.href.split("?").pop().split("&");
+  // We want the list of names after the query
+  const params = decodeURI(window.location.href.split("?").pop()).split(",");
 
   if (params.length > 2) {
 
